@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>らっこ事業 組織図 2026年3月</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Hiragino Sans', 'Yu Gothic', sans-serif;
+    background: #f0f4f8;
+    padding: 30px 20px 60px;
+    color: #1a1a2e;
+  }
+  h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 6px;
+    color: #1a1a2e;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  /* --- layout --- */
+  .chart { display: flex; flex-direction: column; align-items: center; gap: 0; }
+
+  /* CEO */
+  .ceo-wrap { display: flex; flex-direction: column; align-items: center; }
+  .ceo-box {
+    background: #1a1a2e;
+    color: #fff;
+    border-radius: 12px;
+    padding: 14px 40px;
+    font-size: 15px;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,.25);
+  }
+  .ceo-box span { font-size: 11px; font-weight: normal; opacity: .7; display: block; margin-top: 2px; }
+
+  /* vertical line */
+  .v-line { width: 2px; background: #c0c8d8; height: 28px; }
+  .v-line-short { width: 2px; background: #c0c8d8; height: 16px; }
+
+  /* departments row */
+  .dept-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .dept-row::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 10%; right: 10%;
+    height: 2px;
+    background: #c0c8d8;
+  }
+
+  /* department card */
+  .dept {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    position: relative;
+  }
+  .dept::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 50%;
+    width: 2px; height: 18px;
+    background: #c0c8d8;
+  }
+  .dept-header {
+    margin-top: 18px;
+    border-radius: 10px;
+    padding: 10px 14px;
+    text-align: center;
+    width: 100%;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fff;
+    box-shadow: 0 3px 8px rgba(0,0,0,.15);
+  }
+  .dept-header span { font-size: 10px; font-weight: normal; opacity: .85; display: block; margin-top: 2px; }
+
+  /* colours per dept */
+  .color-marketing { background: #e05c4b; }
+  .color-sales      { background: #e07b2c; }
+  .color-cs         { background: #2c7be0; }
+  .color-back       { background: #5b48c6; }
+  .color-new        { background: #1ba870; }
+
+  /* sub-section inside dept */
+  .sub-section {
+    background: #fff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 8px;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+    font-size: 11px;
+  }
+  .sub-section .section-title {
+    font-weight: bold;
+    font-size: 11px;
+    margin-bottom: 6px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #eee;
+    color: #444;
+  }
+  .member-list { list-style: none; }
+  .member-list li {
+    padding: 2px 0 2px 10px;
+    position: relative;
+    color: #333;
+    font-size: 10.5px;
+    line-height: 1.5;
+  }
+  .member-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: #aaa;
+    font-size: 9px;
+    top: 3px;
+  }
+  .tag {
+    display: inline-block;
+    background: #f0f0f0;
+    border-radius: 4px;
+    padding: 1px 5px;
+    font-size: 9px;
+    color: #666;
+    margin-left: 3px;
+  }
+
+  /* key players */
+  .key-section {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 880px;
+  }
+  .key-title {
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+  }
+  .key-row {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .key-card {
+    background: linear-gradient(135deg, #1a1a2e, #2d2d5e);
+    color: #fff;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 11px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,.2);
+    min-width: 160px;
+  }
+  .key-card strong { display: block; font-size: 13px; margin-bottom: 3px; }
+  .key-card .role { opacity: .75; font-size: 10px; }
+
+  /* note */
+  .note {
+    text-align: center;
+    font-size: 10px;
+    color: #999;
+    margin-top: 24px;
+  }
+</style>
+</head>
+<body>
+
+<h1>らっこ事業 組織図</h1>
+<p class="subtitle">2026年3月時点 ／ 全メンバー業務委託契約 ／ AI活用前提の少数精鋭組織</p>
+
+<div class="chart">
+
+  <!-- CEO -->
+  <div class="ceo-wrap">
+    <div class="ceo-box">CEO：北村<span>全部門統括 / インフルエンサー</span></div>
+    <div class="v-line"></div>
+  </div>
+
+  <!-- 横線＋部門列 -->
+  <div class="dept-row">
+
+    <!-- 集客（マーケ）部門 -->
+    <div class="dept">
+      <div class="dept-header color-marketing">集客（マーケ）部門<span>責任者：北村</span></div>
+
+      <div class="sub-section">
+        <div class="section-title">📹 YouTube制作チーム</div>
+        <ul class="member-list">
+          <li>ニキさん <span class="tag">企画・サムネ</span></li>
+          <li>さいとう <span class="tag">台本</span></li>
+          <li>渋谷恵鈴（ポテコ）<span class="tag">ディレクション</span></li>
+          <li>平野建 <span class="tag">ナレーター</span></li>
+          <li>㈱FR0M CREATE・河谷亜翔夢 <span class="tag">動画編集</span></li>
+          <li>黒木誠・森小春・西山花子 <span class="tag">サムネ</span></li>
+          <li>山本結右 <span class="tag">構成リサーチ</span></li>
+          <li>荒井芳文 <span class="tag">動画確認</span></li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">📱 SNS運用</div>
+        <ul class="member-list">
+          <li>X運用：さいとう</li>
+          <li>Threads：柳瀬成助</li>
+          <li>Instagram：りこさん（外注）</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">🤝 集客代行パートナー</div>
+        <ul class="member-list">
+          <li>合同会社HAKUSAI</li>
+          <li>㈱あおの暮らし</li>
+          <li>㈱Knowledge One</li>
+          <li>㈱SAKIYOMI</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 営業部門 -->
+    <div class="dept">
+      <div class="dept-header color-sales">営業部門<span>責任者：北村</span></div>
+
+      <div class="sub-section">
+        <div class="section-title">👔 マネジメント</div>
+        <ul class="member-list">
+          <li>伊藤稔純 / Dreamstage <span class="tag">PM</span></li>
+          <li>高井祐輝 <span class="tag">PMO</span></li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">👥 営業メンバー（個人）</div>
+        <ul class="member-list">
+          <li>森裕紀</li>
+          <li>吉田稚菜</li>
+          <li>桑原寛之</li>
+          <li>中田龍弥</li>
+          <li>矢野千代香</li>
+          <li>鹿野比呂志</li>
+          <li>大橋尚弥</li>
+          <li>一ノ瀬美里</li>
+          <li>片岡龍亮</li>
+          <li>阿保悠斗</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">🏢 営業代行会社</div>
+        <ul class="member-list">
+          <li>株式会社Kir</li>
+          <li>株式会社Esforco</li>
+          <li>株式会社TOP RUNNER</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CS部門 -->
+    <div class="dept">
+      <div class="dept-header color-cs">CS部門<span>統括：内山裕太郎（ゼロ）</span></div>
+
+      <div class="sub-section">
+        <div class="section-title">💬 CS担当</div>
+        <ul class="member-list">
+          <li>佐藤克哉（カツヤ）</li>
+          <li>定者悠生（じょう）</li>
+          <li>金澤慧美（えみ）</li>
+          <li>野田恵利佳（エリカ）</li>
+          <li>笹岡里紗（りさ）</li>
+          <li>堀井勝行</li>
+          <li>林恵那</li>
+          <li>西智代香</li>
+          <li>大﨑久美子</li>
+          <li>岡本加代子</li>
+          <li>亀山愛</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">🔧 サブCS</div>
+        <ul class="member-list">
+          <li>若林和月（かづき）</li>
+          <li>鷹尾真衣（まいさん）</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- バックオフィス部門 -->
+    <div class="dept">
+      <div class="dept-header color-back">バックオフィス部門<span>統括：小杖さん（新採用）</span></div>
+
+      <div class="sub-section">
+        <div class="section-title">🗂 総務</div>
+        <ul class="member-list">
+          <li>岡﨑美由希</li>
+          <li>田邉紗織</li>
+          <li>小島さくら</li>
+          <li>伊東眞那美</li>
+          <li>高橋彩乃</li>
+          <li>大原蔵人</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">💰 経理</div>
+        <ul class="member-list">
+          <li>グエントゥチャン</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">🎨 その他</div>
+        <ul class="member-list">
+          <li>金子千秋 <span class="tag">外注管理＋デザイン</span></li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">🤖 業務効率化 / AIツール開発</div>
+        <ul class="member-list">
+          <li>さいとう <span class="tag">設計・開発担当</span></li>
+          <li style="color:#888;font-size:10px;margin-top:4px;">バックオフィス業務効率化</li>
+          <li style="color:#888;font-size:10px;">AIツール開発・導入</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 新規事業 -->
+    <div class="dept">
+      <div class="dept-header color-new">新規事業<span>X・note運用代行</span></div>
+
+      <div class="sub-section">
+        <div class="section-title">📌 運用責任者</div>
+        <ul class="member-list">
+          <li>柳瀬成助（なりすけ）</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">✏️ 実務担当</div>
+        <ul class="member-list">
+          <li>X運用：柳瀬成助</li>
+          <li>note運用：山本結右</li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <div class="section-title">🧩 全体設計・意思決定</div>
+        <ul class="member-list">
+          <li>北村</li>
+          <li>柳瀬成助</li>
+          <li>さいとう</li>
+          <li>内山裕太郎（ゼロ）</li>
+        </ul>
+      </div>
+    </div>
+
+  </div><!-- /dept-row -->
+
+  <!-- 幹部・キープレイヤー -->
+  <div class="key-section">
+    <div class="key-title">⭐ 幹部・キープレイヤー（レイヤー横断）</div>
+    <div class="key-row">
+      <div class="key-card">
+        <strong>さいとう</strong>
+        <div class="role">集客 / AI設計 / 台本 / バックオフィスAI化</div>
+      </div>
+      <div class="key-card">
+        <strong>内山裕太郎（ゼロ）</strong>
+        <div class="role">CS統括</div>
+      </div>
+      <div class="key-card">
+        <strong>柳瀬成助（なりすけ）</strong>
+        <div class="role">集客 / CS手伝い / 新規事業責任者</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /chart -->
+
+<p class="note">本組織図は2026年3月時点のものです。随時更新予定。</p>
+
+</body>
+</html>
